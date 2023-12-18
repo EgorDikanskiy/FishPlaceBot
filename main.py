@@ -6,6 +6,8 @@ import requests
 from telebot import types
 import html2text
 
+from config import TOKEN
+
 # получение информации об обьектах
 objects_lst = 'https://klevoemestechko.ru/catalog/api/spots/'
 response_objects = requests.get(objects_lst)
@@ -23,7 +25,7 @@ objects_gallery = 'https://klevoemestechko.ru/catalog/api/spot_images/'
 response_objects_gallery = requests.get(objects_gallery)
 response_objects_gallery = response_objects_gallery.json()
 
-bot = telebot.TeleBot('6286800499:AAFgQMCUnpTRvmAhz0FwntKhu69oOZgs3IU')
+bot = telebot.TeleBot(TOKEN)
 
 # раговорные фразы
 yes = ['да', 'конечно', 'да.', 'Да', 'Да.', 'Конечно', 'Ещё бы']
